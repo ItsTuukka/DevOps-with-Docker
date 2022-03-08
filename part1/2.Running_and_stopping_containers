@@ -1,0 +1,13 @@
+1.3
+
+docker exec -it dreamy_galileo bash
+Secret message is: 'You can find the source code here: https://github.com/docker-hy'
+
+
+1.4
+
+run process: docker run -d -it --name hard ubuntu sh -c 'apt update; apt install curl -y; echo "Input website:"; read website; echo "Searching.."; sleep 1; curl http://$website;'
+
+then attach to it: docker attach hard
+
+enter: helsinki.fi

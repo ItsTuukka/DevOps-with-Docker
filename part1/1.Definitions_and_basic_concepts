@@ -1,0 +1,22 @@
+1.1
+
+docker ps -a
+CONTAINER ID   IMAGE     COMMAND                  CREATED         STATUS                          PORTS     NAMES
+94b70a84573e   nginx     "/docker-entrypoint.…"   2 minutes ago   Up 2 minutes                    80/tcp    focused_pascal
+d4eccc56411f   nginx     "/docker-entrypoint.…"   2 minutes ago   Exited (0) About a minute ago             musing_noether
+b430e5aca5bc   nginx     "/docker-entrypoint.…"   4 minutes ago   Exited (0) 3 minutes ago                  gallant_bose
+
+
+1.2
+
+docker ps -a
+CONTAINER ID   IMAGE     COMMAND                  CREATED         STATUS         PORTS     NAMES
+94b70a84573e   nginx     "/docker-entrypoint.…"   4 minutes ago   Up 4 minutes   80/tcp    focused_pascal
+
+docker images
+REPOSITORY   TAG       IMAGE ID       CREATED      SIZE
+nginx        latest    c919045c4c2b   5 days ago   142MB
+
+(i hope "clean docker daeomon" ment all the unused images and containers, not the ones running, I know how to delete those also)
+
+
