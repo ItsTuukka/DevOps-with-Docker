@@ -1,0 +1,6 @@
+removed the port spesification on backend from this:
+REQUEST_ORIGIN: http://localhost:5000/
+
+to this:
+REQUEST_ORIGIN: http://localhost
+
