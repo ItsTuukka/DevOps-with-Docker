@@ -1,0 +1,1 @@
+I forked the course material and tried to deploy that to heroku via github actions. The workflow worked, heroku build worked but when navigating to the app page, it says "Application error". I tried my damn hardest to get to work (many hours), but couldn`t. I am pretty sure my config is correct and even tough the app doesn`t work it still counts as done exercise.

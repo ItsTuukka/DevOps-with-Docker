@@ -1,0 +1,10 @@
+FROM python:3.8-slim
+
+WORKDIR /usr/src/app
+
+COPY . .
+
+RUN pip install poetry --no-cache-dir && \
+    poetry install
+
+CMD ["poetry", "run", "invoke", "start"]

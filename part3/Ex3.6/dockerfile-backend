@@ -1,0 +1,22 @@
+FROM golang:1.16-alpine3.14 AS buildstage
+
+EXPOSE 8080
+
+WORKDIR /usr/src/app
+
+COPY . .
+
+ENV REQUEST_ORIGIN=http://localhost:5000
+
+RUN go build && \
+    adduser -D testuser && \
+    chown testuser /usr/src/app
+
+USER testuser
+
+FROM scratch
+
+COPY --from=buildstage /usr/src/app/server /server
+COPY --from=buildstage /lib /lib
+
+CMD ["/server"]

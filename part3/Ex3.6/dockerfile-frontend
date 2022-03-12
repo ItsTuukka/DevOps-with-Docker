@@ -1,0 +1,28 @@
+FROM node:16-alpine3.14 AS buildstage
+EXPOSE 5000
+
+WORKDIR /usr/src/app
+
+COPY . .
+
+ENV REACT_APP_BACKEND_URL=http://localhost:8080
+
+RUN npm install &&\
+
+    npm run build &&\
+    
+    adduser -D testuser &&\
+    
+    chown testuser /usr/src/app
+
+USER testuser
+
+FROM node:16-alpine3.14
+
+RUN npm install -g serve
+
+WORKDIR /app
+
+COPY --from=buildstage /usr/src/app/build /app
+
+CMD ["serve", "-s", "-l", "5000", "build"]

@@ -1,0 +1,6 @@
+frontend
+from: 531MB
+to: 417MB
+
+backend
+no changes, used golang:1.16-alpine already
